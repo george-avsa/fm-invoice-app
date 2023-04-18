@@ -1,0 +1,38 @@
+.heading {
+    font-style: normal;
+    font-weight: 700;
+}
+
+.heading-l {
+    font-size: 36px;
+    line-height: 33px;
+    letter-spacing: -1.125px;
+}
+
+.heading-m {
+    font-size: 24px;
+    line-height: 22px;
+    letter-spacing: -0.75px;
+}
+
+.heading-s {
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: -0.25px;
+}
+
+.heading--dark-theme {
+    color: #0C0E16;
+}
+
+.body-text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -0.1px;
+}
+
+.body-text--spaced {
+    line-height: 15px;
+}

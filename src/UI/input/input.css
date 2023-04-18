@@ -1,0 +1,71 @@
+.field {
+    display: inline-block;
+    position: relative;
+}
+
+.field__label {
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+    margin-bottom: 8px;
+    
+    letter-spacing: -0.1px;
+    
+    color: #7E88C3;
+}
+
+.field__input {
+    width: 220px;
+    box-sizing: border-box;
+    align-self: flex-start;
+    background: #FFFFFF;
+    border: 1px solid #7E88C3;
+    border-radius: 4px;
+    display: inline-block;
+    
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+    color: #0C0E16;
+    
+    outline: 0px solid black;
+    
+    padding: 12px 20px;
+}
+
+.field__input:focus {
+    border: 1px solid #9277FF;
+    outline: 0px solid #9277FF;
+}   
+
+.dropdown {
+    align-self: flex-start;
+    position: absolute;
+    width: 100%;
+    bottom: -120px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 10px 20px rgba(72, 84, 159, 0.25);
+    border-radius: 8px;
+    transition: .5s;
+}
+
+.dropdown__item {
+    padding: 16px 24px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 15px;
+
+    letter-spacing: -0.25px;
+    color: #0C0E16;
+    cursor: pointer;
+}
+
+.dropdown__item:not(:last-child) {
+    border-bottom: 1px solid #DFE3FA;
+}

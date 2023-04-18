@@ -1,0 +1,67 @@
+.button {
+    border-radius: 24px;
+    padding: 16px 24px;
+    cursor: pointer;
+    transition: .2s;
+    position: relative;
+    
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+
+    /* resetting default styles */
+    border: 0px solid black;
+}
+
+.button--long {
+    padding:  16px 115px;
+}
+
+.button--creaction {
+    padding-left: 54px;
+}
+
+.button__plus {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+.button--black {
+    background: #252945;
+    color: #7E88C3;
+}
+
+.button--black:hover {
+    background: #FFFFFF;
+    color: #DFE3FA;
+}
+
+.button--grey {    
+    background: #F9FAFE;
+    color: #7E88C3;
+}
+
+.button--grey:hover {
+    background: #DFE3FA;
+}
+
+.button--purple {
+    background: #7C5DFA;
+    color: #FFFFFF;
+}
+
+.button--purple:hover {
+    opacity: .8;
+}
+
+.button--red {
+    background: #EC5757;
+    color: #FFFFFF;
+}
+
+.button--red:hover {
+    background: #FF9797;
+}
