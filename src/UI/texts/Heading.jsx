@@ -3,7 +3,7 @@ import "./text.css";
 
 const theme = "dark";
 
-function Heading({ additionClass, props }) {
+function Heading({ additionClass, ...props }) {
     return (
         <p className={"heading " + additionClass + ` heading--${theme}-theme`}>
             {props.children}

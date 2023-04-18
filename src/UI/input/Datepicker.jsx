@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import "./datepicker.css";
 import "./input.css";
 import generateMonth from "../../calendarFunction/generateMonth";
+import arrowLeft from "./../../images/arrowLeft.svg";
+import { HeadingM, HeadingS } from "../texts/Heading";
 
 function Datepicker({ label, ...props }) {
     // use redux for this
@@ -38,16 +40,25 @@ function Datepicker({ label, ...props }) {
     return (
         <div className='field'>
             <div className='dropdowns'>
-                {generateMonth(new Date(2023, 2, 2)).map((date) => {
-                    return (
-                        <div
-                            className='calendar__item'
-                            style={!date.clickable ? { opacity: ".5" } : null}
-                        >
-                            {date.date.getDate()}
-                        </div>
-                    );
-                })}
+                <div className='calendar__controls'>
+                    <img src={arrowLeft} alt='' />
+                    <HeadingS>Aug 2021</HeadingS>
+                    <img src={arrowLeft} alt='arrowRight' />
+                </div>
+                <div className='calendar__body'>
+                    {generateMonth(new Date(2023, 0, 2)).map((date) => {
+                        return (
+                            <div
+                                className='calendar__item'
+                                style={
+                                    !date.clickable ? { opacity: ".5" } : null
+                                }
+                            >
+                                {date.date.getDate()}
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
             <div className='field__label'>{label}</div>
             <div
