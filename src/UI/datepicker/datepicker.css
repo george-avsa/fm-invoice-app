@@ -2,7 +2,6 @@
     align-self: flex-start;
     position: absolute;
     width: 100%;
-    bottom: -250px;
 
     padding: 0 20px 20px 20px;
     box-sizing: border-box;
@@ -25,6 +24,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    cursor: pointer;
+}
+
+.calendar__item--transparent {
+    opacity: .5;
+}
+
+.calendar__item--today {
+    color: #7C5DFA;
+}
+
+.calendar__item--picked {
+    opacity: .5;
+    color: #7C5DFA;
 }
 
 .calendar__controls {
@@ -37,6 +51,7 @@
 
 .calendar__controls img {
     width: 10px;
+    cursor: pointer;
 }
 
 .calendar__controls img[alt="arrowRight"] {

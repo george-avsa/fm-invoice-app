@@ -1,5 +1,5 @@
 import React from 'react';
-import { Datepicker } from './UI/input/Datepicker';
+import { Datepicker } from './UI/datepicker/Datepicker';
 
 export default function App() {
   return (

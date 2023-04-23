@@ -24,6 +24,7 @@
     border: 1px solid #7E88C3;
     border-radius: 4px;
     display: inline-block;
+    position: relative;
     
     font-style: normal;
     font-weight: 700;
@@ -41,6 +42,13 @@
     border: 1px solid #9277FF;
     outline: 0px solid #9277FF;
 }   
+
+.field__input img {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -9px;
+}
 
 .dropdown {
     align-self: flex-start;

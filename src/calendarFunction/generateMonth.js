@@ -1,4 +1,5 @@
 export default function generateMonth(monthDate) {
+        const now = new Date();
         const days = [];
         let lastDayInMonth = new Date(
             monthDate.getFullYear(),
@@ -34,17 +35,20 @@ export default function generateMonth(monthDate) {
                 day: fakeDay,
                 date: new Date(
                     lastDayInMonthCopy.setMilliseconds(-dayInMiliseconds)
-                ),
-                clickable: false,
-            });
-            ++fakeDay;
-        }
-
+                    ),
+                    clickable: false,
+                });
+                ++fakeDay;
+            }
+            
+        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
         while (lastDayInMonth?.getDate() !== 1) {
+            const date = new Date(lastDayInMonth);
             days.push({
                 day: lastDayInMonth?.getDate(),
-                date: new Date(lastDayInMonth),
+                date,
                 clickable: true,
+                today: date - today === 0,
             });
             lastDayInMonth.setMilliseconds(dayInMiliseconds);
         }
