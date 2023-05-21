@@ -35,7 +35,7 @@ function Select({ label, ...props }) {
     }
 
     return (
-        <div className='field'>
+        <div className='field' {...props}>
             {dropdown && (
                 <SelectDropdown options={options} selectValue={selectValue}></SelectDropdown>
             )}

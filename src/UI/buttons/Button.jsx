@@ -17,12 +17,12 @@ const colors = {
     },
 };
 
-const theme = "dark";
+const theme = "light";
 
 function Button({ color, additionalClass = "", ...props }) {
     const colorClass = colors[theme][color];
     return (
-        <button className={["button", colorClass, additionalClass].join(" ")}>
+        <button className={["button", colorClass, additionalClass].join(" ")} {...props}>
             {props.children}
         </button>
     );
@@ -39,7 +39,7 @@ function ButtonToAdd(props) {
 
 function ButtonLong(props) {
     return (
-        <Button color='grey' additionalClass='button--long'>
+        <Button color='grey' additionalClass='button--long' {...props}>
             {props.children}
         </Button>
     );

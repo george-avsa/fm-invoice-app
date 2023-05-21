@@ -3,6 +3,10 @@
     position: relative;
 }
 
+.field--full-w {
+    grid-column: 1/4;
+}
+
 .field__label {
     font-family: 'League Spartan';
     font-style: normal;
@@ -17,7 +21,7 @@
 }
 
 .field__input {
-    width: 240px;
+    width: 100%;
     box-sizing: border-box;
     align-self: flex-start;
     background: #FFFFFF;
@@ -78,4 +82,10 @@
 
 .dropdown__item:not(:last-child) {
     border-bottom: 1px solid #DFE3FA;
+}
+
+.creation-form__buttons {
+    gap: 8px;
+    display: flex;
+    margin-top: 44px;
 }

@@ -9,7 +9,7 @@
 form.invoice-creator {
     width: 720px;
     box-sizing: border-box;
-    min-height: 100vh;
+    height: 100vh;
     background: #FFFFFF;
 
     position: fixed;
@@ -20,5 +20,46 @@ form.invoice-creator {
     padding: 56px  56px 56px 156px;
 
     background: #FFFFFF;
-    border-radius: 0px 20px 20px 0px;
+    border-radius: 0px 20px 0px 0px;
+    overflow-x: scroll;
+}
+
+[class*="creation-form__grid-"]:not(:last-child) {
+    margin-bottom: 48px;
+}
+
+[class*="creation-form__grid-"] {
+    width: 100%;
+    display: grid;
+    grid-column-gap: 24px;
+}
+
+.creation-form__grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.creation-form__grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+[class*="creation-form__grid-"] > div:not(:first-child) {
+    margin-top: 24px;
+}
+
+.creation-form__items {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 16px;
+}
+
+.create-form__cell-center {
+    display: flex;
+    align-items: center;
+}
+
+.create-form__delete {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }

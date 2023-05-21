@@ -35,7 +35,7 @@ function Datepicker({ label, ...props }) {
     dropdown && inputClassList.push('field__input--focused')
 
     return (
-        <div className='field'>
+        <div className='field' {...props}>
             {dropdown && <DatepickerDropdown></DatepickerDropdown>}
             <div className='field__label'>Issue Date</div>
             <div

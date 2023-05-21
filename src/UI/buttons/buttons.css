@@ -17,6 +17,7 @@
 }
 
 .button--long {
+    width: 100%;
     padding:  16px 115px;
 }
 
