@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./datepicker.css";
-import "./../input/input.css";
+import "../input/input.css";
 import { useSelector } from "react-redux";
 import { DatepickerDropdown } from "./Calendar";
 import { dateToText } from "../../calendarFunction/dateToText";
@@ -23,10 +23,16 @@ function Datepicker({ label, ...props }) {
             }
         };
     }, []);
-
+    
     function handleDropdown(e) {
         setDropdown(true);
     }
+
+    const inputClassList = [
+        'field__input'
+    ];
+
+    dropdown && inputClassList.push('field__input--focused')
 
     return (
         <div className='field'>
@@ -34,6 +40,9 @@ function Datepicker({ label, ...props }) {
             <div className='field__label'>Issue Date</div>
             <div
                 className='field__input'
+                style={{
+                    border: dropdown ? '1px solid #9277FF' : '1px solid #DFE3FA'
+                }}
                 onClick={(e) => handleDropdown(e)}
                 ref={fieldRef}
             >

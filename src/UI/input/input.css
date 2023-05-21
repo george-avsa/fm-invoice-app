@@ -21,7 +21,7 @@
     box-sizing: border-box;
     align-self: flex-start;
     background: #FFFFFF;
-    border: 1px solid #7E88C3;
+    border: 1px solid #DFE3FA;
     border-radius: 4px;
     display: inline-block;
     position: relative;
@@ -36,6 +36,8 @@
     outline: 0px solid black;
     
     padding: 12px 20px;
+
+    transition: all 2ms;
 }
 
 .field__input:focus {
@@ -54,7 +56,7 @@
     align-self: flex-start;
     position: absolute;
     width: 100%;
-    bottom: -120px;
+    bottom: -100px;
 
     background: #FFFFFF;
     box-shadow: 0px 10px 20px rgba(72, 84, 159, 0.25);

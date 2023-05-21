@@ -1,0 +1,95 @@
+.invoice-details {
+    width: 730px;
+    padding: 80px 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.go-back {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.invoice-managment {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 20px 32px;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+    border-radius: 8px;
+}
+
+.invoice-managment__status {
+    display: flex;
+    align-items: center;
+    gap:20px;
+
+    flex-grow: 1;
+}
+
+.invoice-information {
+    padding: 48px;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+    border-radius: 8px;
+}
+
+.invoice-information__general {
+    display: flex;
+    justify-content: space-between;
+}
+
+.customer-information {
+    display: grid;
+    grid-column-gap: 60px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.bill-from {
+    grid-column: 2/5;
+}
+
+.customer-contacts {
+    grid-column: 3/5;
+}
+
+.customer-adress {
+    grid-row: 2/4;
+    grid-column: 2/3;
+}
+
+.customer-purchase {
+    width: 100%;
+    margin-top: 44px;
+    
+}
+
+.customer-purchase__list {
+    padding: 32px;
+    width: 100%;
+    background: #F9FAFE;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.customer-purchase__list tr td {
+    border-top: 24px solid #F9FAFE;
+}
+
+.customer-purchase__total {
+    background: #373B53;
+    border-radius: 0px 0px 8px 8px;
+    padding: 32px;
+
+}
+
+.customer-purchase__total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

@@ -1,0 +1,17 @@
+.filter {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+
+    height: 100%;
+    cursor: pointer;
+}
+
+.filter__arrow {
+    rotate: 270deg;
+}
+
+.dropdown {
+    z-index: 1000;
+}

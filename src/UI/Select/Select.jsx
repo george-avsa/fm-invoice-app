@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./input.css";
+import "../input/input.css";
+import SelectDropdown from "./SelectDropdown";
 
 function Select({ label, ...props }) {
-    // use redux for this
-    const options = ["Lorem", "Ipsum"];
+    // use redux for 
+    const options = ["Lorem", "Ipsum", "Ipsum"];
     const [fieldValue, setFieldValue] = useState(options[0]);
     // end
 
@@ -36,17 +37,7 @@ function Select({ label, ...props }) {
     return (
         <div className='field'>
             {dropdown && (
-                <div className='dropdown'>
-                    {options.map((option) => (
-                        <div
-                            className='dropdown__item'
-                            onClick={(e) => selectValue(e)}
-                            key={option}
-                        >
-                            {option}
-                        </div>
-                    ))}
-                </div>
+                <SelectDropdown options={options} selectValue={selectValue}></SelectDropdown>
             )}
             <div className='field__label'>{label}</div>
             <div

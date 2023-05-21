@@ -56,3 +56,8 @@
 .calendar__controls img[alt="arrowRight"] {
     rotate: 180deg;
 }
+
+.field__input--focused {
+    border: 1px solid #9277FF;
+    outline: 0px solid #9277FF;
+}

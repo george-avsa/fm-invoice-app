@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SelectDropdown() {
+export default function SelectDropdown({options, selectValue}) {
     return (
         <div className='dropdown'>
             {options.map((option) => (

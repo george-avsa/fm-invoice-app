@@ -1,0 +1,24 @@
+.modal-wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 50;
+}
+
+form.invoice-creator {
+    width: 720px;
+    box-sizing: border-box;
+    min-height: 100vh;
+    background: #FFFFFF;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    padding: 56px  56px 56px 156px;
+
+    background: #FFFFFF;
+    border-radius: 0px 20px 20px 0px;
+}

@@ -9,10 +9,11 @@
     font-weight: 700;
     font-size: 15px;
     line-height: 15px;
-    letter-spacing: -0.25px;
+    letter-spacing: .25px;
 
     /* resetting default styles */
     border: 0px solid black;
+    height: auto;
 }
 
 .button--long {

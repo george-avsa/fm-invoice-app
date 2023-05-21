@@ -1,0 +1,27 @@
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100px;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background: #373B53;
+    border-radius: 0px 20px 20px 0px;
+
+    z-index: 150;
+}
+
+.nav__logo {
+    width: 100%;
+    justify-self: flex-start;
+}
+
+.nav__dark-light-logo {
+    width: 20px;
+}
