@@ -1,19 +1,19 @@
 import React from 'react';
-import { Datepicker } from './UI/datepicker/Datepicker';
-import { Select } from './UI/Select/Select';
-import { Nav } from './UI/header/Nav';
+import { Nav } from './components/Header/Nav';
 import { InvoiceDetails } from './pages/InvoiceDetails';
+import './components/UI/Texts/text.css'
+import { useSelector } from 'react-redux';
 import { Invoice } from './pages/Invoice';
-import './UI/texts/text.css'
-import FormModal from './components/FormModal';
 
 export default function App() {
+
+  const modalWrapper = useSelector(state => state.settings.modalWrapper);
+
   return (
     <div className='wrapper'>
       <Nav></Nav>
-      <FormModal></FormModal>
-      <InvoiceDetails></InvoiceDetails>
-      {/* <Invoice></Invoice> */}
+      <Invoice></Invoice>
+      {modalWrapper && <style type="text/css">{"html {overflow: hidden}"}</style>}
     </div>
   )
 }

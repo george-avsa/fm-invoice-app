@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import arrowLeft from "./../../images/arrowLeft.svg";
-import { decrementMonth, incrementMonth, inrementMonth } from "../../store";
-import { HeadingS } from "../texts/Heading";
 import generateMonth from "../../calendarFunction/generateMonth";
 import { useEffect, useRef } from "react";
 import monthToText from "../../calendarFunction/monthToText";
 import { CalendarItem } from "./CalendarItem";
+import { HeadingS } from "../UI/Texts/Heading";
+import { decrementMonth, inrementMonth } from "../../store/form";
 
 export function DatepickerDropdown(props) {
     const dispatch = useDispatch();
@@ -20,7 +20,6 @@ export function DatepickerDropdown(props) {
     }, [monthDate])
 
     return (
-        // <div onClick={() => dispatch(decrementMonth())}>{monthDate?.toString()}</div>
         <div className='dropdowns' ref={dropdownRef}>
             <div className='calendar__controls'>
                 <img src={arrowLeft} alt='' onClick={() => dispatch(decrementMonth())} />

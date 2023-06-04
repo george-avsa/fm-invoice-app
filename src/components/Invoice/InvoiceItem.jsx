@@ -1,16 +1,9 @@
-import { BodyText } from "../texts/BodyText";
-import { HeadingS } from "../texts/Heading";
-import { InvoiceStatus } from "./InvoiceStatus";
+
 import arrowLeft from "./../../images/arrowLeft.svg";
 import { dateToText } from "../../calendarFunction/dateToText";
-
-function priceToFloat(string) {
-
-    const intPrice = `${string}`.split('.');
-    return intPrice[0] + '.' + `${intPrice[1]}`.length
-        ? (intPrice[1]?.length < 2 ? intPrice[1] + '0' : intPrice[1]) 
-        : '00';
-}
+import { HeadingS } from "../UI/Texts/Heading";
+import { BodyText } from "../UI/Texts/BodyText";
+import { InvoiceStatus } from "./InvoiceStatus";
 
 export function InvoiceItem({
     id,

@@ -1,4 +1,3 @@
-import React from "react";
 import "./text.css";
 
 function BodyText({ additionalClass = "", grey=false, style, ...props }) {

@@ -1,14 +1,15 @@
 import './invoiceDetails.css';
 import arrow from './../images/arrowLeft.svg';
-import { HeadingM, HeadingS } from '../UI/texts/Heading';
-import { BodyText } from '../UI/texts/BodyText';
-import { InvoiceStatus } from '../UI/invoice/InvoiceStatus';
-import './../UI/invoice/invoiceList.css';
-import { Button } from '../UI/buttons/Button';
+import { HeadingM, HeadingS } from '../components/UI/Texts/Heading';
+import { BodyText } from '../components/UI/Texts/BodyText';
+import { InvoiceStatus } from '../components/Invoice/InvoiceStatus';
+import { InvoiceManage } from '../components/Invoice/InvoiceManage';
+import '../components/Invoice/invoiceList.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchInvoices } from '../store';
 import { dateToText } from '../calendarFunction/dateToText';
+import { Button } from '../components/UI/Buttons/Button';
+import { fetchInvoices } from '../store/invoices';
 
 export function InvoiceDetails(props) {
 
@@ -26,15 +27,7 @@ export function InvoiceDetails(props) {
                 <img src={arrow} alt="" />
                 <HeadingS>Go back</HeadingS>
            </div>
-           <div className="invoice-managment">
-                <div className="invoice-managment__status">
-                    <BodyText grey={true} >Status</BodyText>
-                    <InvoiceStatus status="pending"></InvoiceStatus>
-                </div>
-                <Button color="grey">Edit</Button>
-                <Button color="red">Delete</Button>
-                <Button color="purple">Mark as Paid</Button>
-           </div>
+           <InvoiceManage></InvoiceManage>
            <div className='invoice-information'>
                 {invoice.length && (
                     <>

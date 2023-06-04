@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./datepicker.css";
-import "../input/input.css";
+import "./../UI/Input/input.css";
 import { useSelector } from "react-redux";
 import { DatepickerDropdown } from "./Calendar";
 import { dateToText } from "../../calendarFunction/dateToText";

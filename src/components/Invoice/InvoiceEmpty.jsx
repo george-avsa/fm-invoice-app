@@ -1,7 +1,6 @@
-import { BodyText } from "../texts/BodyText";
-import { HeadingL } from "../texts/Heading";
+import { BodyText } from "../UI/Texts/BodyText";
+import { HeadingL } from "../UI/Texts/Heading";
 import invoiceEmpty from "./../../images/invoiceEmpty.svg";
-import './invoiceEmpty.css';
 
 export function InvoiceEmpty() {
     return (

@@ -4,24 +4,31 @@
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
     z-index: 50;
+
+    top: 0;
+    left: 0;
 }
 
 form.invoice-creator {
     width: 720px;
-    box-sizing: border-box;
+    min-height: 100vh;
     height: 100vh;
-    background: #FFFFFF;
-
-    position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
 
-    padding: 56px  56px 56px 156px;
+    position: relative;
 
     background: #FFFFFF;
-    border-radius: 0px 20px 0px 0px;
+    border-radius: 0px 20px 20px 0px;
     overflow-x: scroll;
+
+}
+
+.invoice-creator__inner {
+    box-sizing: border-box;
+    padding: 56px 56px 0px 156px;
+
 }
 
 [class*="creation-form__grid-"]:not(:last-child) {
@@ -61,5 +68,28 @@ form.invoice-creator {
 .create-form__delete {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+}
+
+.creation-form__buttons {
+    position: sticky;
+    background: #FFFFFF;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    gap: 8px;
+    display: flex;
+
+    border-radius: 0px 20px 0px 0px;
+    box-sizing: border-box;
+    padding: 31px 56px 31px 156px;
+    margin-top: 40px;
+
+    -webkit-box-shadow: 1px -4px 99px 38px rgba(34, 60, 80, 0.1);
+    -moz-box-shadow: 1px -4px 99px 38px rgba(34, 60, 80, 0.1);
+    box-shadow: 1px -4px 99px 38px rgba(34, 60, 80, 0.1);
+}
+
+.creation-form__buttons {
     justify-content: flex-end;
 }

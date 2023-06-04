@@ -1,7 +1,7 @@
-import { HeadingS } from '../texts/Heading';
+import { HeadingS } from '../Texts/Heading';
 import './filter.css';
-import '../input/input.css';
-import arrowLeft from './../../images/arrowLeft.svg'
+import '../Input/input.css';
+import arrowLeft from './../../../images/arrowLeft.svg'
 import { useEffect, useRef, useState } from 'react';
 import SelectDropdown from '../Select/SelectDropdown';
 

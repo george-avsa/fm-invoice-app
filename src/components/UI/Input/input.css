@@ -17,15 +17,20 @@
     
     letter-spacing: -0.1px;
     
+}
+
+.field__label--light {
     color: #7E88C3;
+}
+
+.field__label--dark {
+    color: #DFE3FA;
 }
 
 .field__input {
     width: 100%;
     box-sizing: border-box;
     align-self: flex-start;
-    background: #FFFFFF;
-    border: 1px solid #DFE3FA;
     border-radius: 4px;
     display: inline-block;
     position: relative;
@@ -35,13 +40,27 @@
     font-size: 15px;
     line-height: 15px;
     letter-spacing: -0.25px;
-    color: #0C0E16;
+    
     
     outline: 0px solid black;
     
     padding: 12px 20px;
-
+    
     transition: all 2ms;
+}
+
+.field__input--light {
+    border: 1px solid #DFE3FA;
+    
+    background: #FFFFFF;
+    color: #0C0E16;
+}
+
+.field__input--dark {
+    border: 1px solid #252945;
+    
+    background: #1E2139;
+    color: #FFFFFF;
 }
 
 .field__input:focus {
@@ -82,10 +101,4 @@
 
 .dropdown__item:not(:last-child) {
     border-bottom: 1px solid #DFE3FA;
-}
-
-.creation-form__buttons {
-    gap: 8px;
-    display: flex;
-    margin-top: 44px;
 }

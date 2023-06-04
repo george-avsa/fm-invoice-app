@@ -1,4 +1,4 @@
-import { HeadingS } from "../texts/Heading";
+import { HeadingS } from "../UI/Texts/Heading";
 
 export function InvoiceStatus({status}) {
 

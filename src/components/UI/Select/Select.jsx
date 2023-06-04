@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "../input/input.css";
+import "../Input/input.css";
 import SelectDropdown from "./SelectDropdown";
 
 function Select({ label, ...props }) {

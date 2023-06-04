@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { InvoiceItem } from "./InvoiceItem";
 import { InvoiceEmpty } from "./InvoiceEmpty";
 import { useEffect } from "react";
-import { fetchInvoices } from "../../store";
+import { fetchInvoices } from "../../store/invoices";
 
 
 export function InvoiceList() {

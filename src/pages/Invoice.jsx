@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
-import { ButtonToAdd } from '../UI/buttons/Button';
-import { Filter } from '../UI/filter/Filter';
-import { InvoiceList } from '../UI/invoice/InvoiceList';
-import { BodyText } from '../UI/texts/BodyText';
-import { HeadingL, HeadingS } from '../UI/texts/Heading';
-import './../UI/invoice/invoiceList.css';
+import '../components/Invoice/invoiceList.css';
+import { BodyText } from '../components/UI/Texts/BodyText';
+import { HeadingL } from '../components/UI/Texts/Heading';
+import { ButtonToAdd } from '../components/UI/Buttons/ButtonToAdd';
+import { InvoiceList } from '../components/Invoice/InvoiceList';
+import { Filter } from '../components/UI/Filter/Filter';
 
 export function Invoice(props) {
     const invoiceAmount = useSelector(state => state.invoiceList.length);
