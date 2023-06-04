@@ -46,6 +46,10 @@
     background-color: #FFFFFF;
 }
 
+.invoice-item--dark {
+    background-color: #1E2139;
+}
+
 .invoice-item:not(:first-child) {
     margin-top: 16px;
 }

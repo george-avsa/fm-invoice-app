@@ -46,6 +46,15 @@
     color: #7E88C3;
 }
 
+.button--grey-dark {
+    background: #252945;
+    color: #DFE3FA;
+}
+
+.button--grey-dark:hover {
+    opacity: .2;
+}
+
 .button--grey:hover {
     background: #DFE3FA;
 }
@@ -65,5 +74,5 @@
 }
 
 .button--red:hover {
-    background: #FF9797;
+    opacity: .4;
 }

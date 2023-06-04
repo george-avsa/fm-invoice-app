@@ -14,13 +14,15 @@ export function DatepickerDropdown(props) {
 
     const dropdownRef = useRef(null);
 
+    const theme = useSelector(state => state.settings.theme);
+
     useEffect(() => {
         const height = dropdownRef.current.offsetHeight;
         dropdownRef.current.style.bottom = `-${height + 20}px`;
     }, [monthDate])
 
     return (
-        <div className='dropdowns' ref={dropdownRef}>
+        <div className={`dropdowns dropdowns--${theme}`} ref={dropdownRef}>
             <div className='calendar__controls'>
                 <img src={arrowLeft} alt='' onClick={() => dispatch(decrementMonth())} />
                 <HeadingS>{ monthToText(monthDate) }</HeadingS>

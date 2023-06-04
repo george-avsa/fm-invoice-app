@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../Input/input.css";
 import SelectDropdown from "./SelectDropdown";
+import { useSelector } from "react-redux";
 
 function Select({ label, ...props }) {
     // use redux for 
@@ -34,14 +35,16 @@ function Select({ label, ...props }) {
         }
     }
 
+    const theme = useSelector(state => state.settings.theme);
+
     return (
         <div className='field' {...props}>
             {dropdown && (
                 <SelectDropdown options={options} selectValue={selectValue}></SelectDropdown>
             )}
-            <div className='field__label'>{label}</div>
+            <div className='field__label' style={{color: '#7E88C3'}}>{label}</div>
             <div
-                className='field__input'
+                className={`field__input field__input--${theme}`}
                 onClick={(e) => handleDropdown(e)}
                 ref={fieldRef}
             >

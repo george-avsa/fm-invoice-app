@@ -4,6 +4,7 @@ import { dateToText } from "../../calendarFunction/dateToText";
 import { HeadingS } from "../UI/Texts/Heading";
 import { BodyText } from "../UI/Texts/BodyText";
 import { InvoiceStatus } from "./InvoiceStatus";
+import { useSelector } from "react-redux";
 
 export function InvoiceItem({
     id,
@@ -12,8 +13,10 @@ export function InvoiceItem({
     total,
     status
 }) {
+    const theme = useSelector(state => state.settings.theme);
+
     return (
-        <div className="invoice-item invoice-item--light">
+        <div className={`invoice-item invoice-item--${theme}`}>
             <div style={{
                 display: 'flex', 
                 alighItems: 'center', 
@@ -22,9 +25,9 @@ export function InvoiceItem({
                 alignItems: 'center'
             }}>
                 <HeadingS>#{id}</HeadingS>
-                <BodyText>Due {dateToText(new Date(createdAt), 'text')}</BodyText>
+                <BodyText grey>Due {dateToText(new Date(createdAt), 'text')}</BodyText>
             </div>
-            <BodyText style={{flexGrow: "1"}}>{clientName}</BodyText>
+            <BodyText style={{flexGrow: "1"}} grey>{clientName}</BodyText>
             <HeadingS style={{flexGrow: "1", textAlign: "right"}}>£ {Number(total).toFixed(2)}</HeadingS>
             <InvoiceStatus status={status}></InvoiceStatus>
             <img src={arrowLeft} />

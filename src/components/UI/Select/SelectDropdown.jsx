@@ -1,9 +1,12 @@
+import { useSelector } from "react-redux";
+
 export default function SelectDropdown({options, selectValue}) {
+    const theme = useSelector(state => state.settings.theme);
     return (
-        <div className='dropdown'>
+        <div className={`dropdown dropdown--${theme}`}>
             {options.map((option) => (
                 <div
-                    className='dropdown__item'
+                    className={`dropdown__item dropdown__item--${theme}`}
                     onClick={(e) => selectValue(e)}
                     key={option}
                 >

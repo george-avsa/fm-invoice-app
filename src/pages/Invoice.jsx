@@ -14,7 +14,7 @@ export function Invoice(props) {
             <div className="invoice-list__header">
                 <div className="invoice-list__page-name">
                     <HeadingL>Invoices</HeadingL>
-                    <BodyText color="grey">{invoiceAmount ? `There are ${invoiceAmount} total invoices` : 'No invoices'}</BodyText>
+                    <BodyText grey>{invoiceAmount ? `There are ${invoiceAmount} total invoices` : 'No invoices'}</BodyText>
                 </div>
                 <Filter></Filter>
                 <ButtonToAdd>New Invoice</ButtonToAdd>

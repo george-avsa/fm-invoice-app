@@ -2,24 +2,24 @@ import './invoiceDetails.css';
 import arrow from './../images/arrowLeft.svg';
 import { HeadingM, HeadingS } from '../components/UI/Texts/Heading';
 import { BodyText } from '../components/UI/Texts/BodyText';
-import { InvoiceStatus } from '../components/Invoice/InvoiceStatus';
 import { InvoiceManage } from '../components/Invoice/InvoiceManage';
 import '../components/Invoice/invoiceList.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { dateToText } from '../calendarFunction/dateToText';
-import { Button } from '../components/UI/Buttons/Button';
 import { fetchInvoices } from '../store/invoices';
 
 export function InvoiceDetails(props) {
 
-    const invoice = useSelector(state => state.invoiceList)
+    const invoice = useSelector(state => state.invoiceList);
 
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(fetchInvoices()) 
     }, [])
+
+    const theme = useSelector(state => state.settings.theme);
 
     return (
         <div className='invoice-details'>
@@ -28,7 +28,7 @@ export function InvoiceDetails(props) {
                 <HeadingS>Go back</HeadingS>
            </div>
            <InvoiceManage></InvoiceManage>
-           <div className='invoice-information'>
+           <div className={`invoice-information invoice-information--${theme}`}>
                 {invoice.length && (
                     <>
                         <div className="customer-information">
@@ -69,7 +69,7 @@ export function InvoiceDetails(props) {
                             </div>
                         </div>
                         <div className="customer-purchase">
-                           <table className="customer-purchase__list">
+                           <table className={`customer-purchase__list customer-purchase__list--${theme}`}>
                                 <tr>
                                     <th colSpan="2">
                                         <BodyText grey="true" style={{textAlign: 'left'}}>Item name</BodyText>
@@ -113,7 +113,7 @@ export function InvoiceDetails(props) {
                                     </td>
                                 </tr>
                            </table>
-                           <div className="customer-purchase__total">
+                           <div className={`customer-purchase__total customer-purchase__total--${theme}`}>
                                 <BodyText style={{color: '#FFFFFF'}}>Amount Due</BodyText>
                                 <HeadingM style={{color: '#FFFFFF'}}>£ 556.00</HeadingM>
                            </div>

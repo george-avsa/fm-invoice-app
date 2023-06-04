@@ -19,9 +19,16 @@
     gap: 8px;
 
     padding: 20px 32px;
-    background: #FFFFFF;
     box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
     border-radius: 8px;
+}
+
+.invoice-managment--light {
+    background: #FFFFFF;
+}
+
+.invoice-managment--dark {
+    background: #1E2139;
 }
 
 .invoice-managment__status {
@@ -34,9 +41,20 @@
 
 .invoice-information {
     padding: 48px;
-    background: #FFFFFF;
     box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
     border-radius: 8px;
+}
+
+.invoice-information--light {
+    background: #FFFFFF;
+} 
+
+.invoice-information--dark {
+    background: #1E2139;
+} 
+
+.invoice-information--dark td {
+    background: #1E2139;
 }
 
 .invoice-information__general {
@@ -66,30 +84,46 @@
 
 .customer-purchase {
     width: 100%;
-    margin-top: 44px;
-    
+    margin-top: 44px;   
 }
 
 .customer-purchase__list {
     padding: 32px;
     width: 100%;
-    background: #F9FAFE;
     border-radius: 8px 8px 0px 0px;
 }
 
-.customer-purchase__list tr td {
+.customer-purchase__list--light {
+    background: #F9FAFE;
+}
+
+.customer-purchase__list--dark {
+    background: #252945;
+}
+
+.customer-purchase__list--light tr td {
     border-top: 24px solid #F9FAFE;
 }
 
-.customer-purchase__total {
-    background: #373B53;
-    border-radius: 0px 0px 8px 8px;
-    padding: 32px;
-
+.customer-purchase__list--dark tr td {
+    border-top: 24px solid #252945;
+    background: #252945;
 }
 
 .customer-purchase__total {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    border-radius: 0px 0px 8px 8px;
+    padding: 32px;
+    
+}
+
+.customer-purchase__total--light {
+    background: #373B53;
+}
+
+.customer-purchase__total--dark {
+    background: #0C0E16;
 }

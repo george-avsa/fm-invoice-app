@@ -1,10 +1,14 @@
 import { useEffect } from "react";
 import { Button } from "../UI/Buttons/Button";
+import { useSelector } from "react-redux";
 
 export function FormButtons({editing=false}) {
-    
+    const theme = useSelector(state => state.settings.theme);
     return (
-        <div className={`creation-form__buttons creation-form__buttons--${editing ? 'adding' : 'editing'}`}>
+        <div className={`creation-form__buttons 
+                        creation-form__buttons--${theme} 
+                        creation-form__buttons--${editing ? 'adding' : 'editing'}`
+        }>
             {!editing ? (
                 <>
                     <div style={{flexGrow: '1'}}>

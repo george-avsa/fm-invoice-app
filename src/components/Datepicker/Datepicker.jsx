@@ -34,15 +34,14 @@ function Datepicker({ label, ...props }) {
 
     dropdown && inputClassList.push('field__input--focused')
 
+    const theme = useSelector(state => state.settings.theme);
+
     return (
         <div className='field' {...props}>
             {dropdown && <DatepickerDropdown></DatepickerDropdown>}
             <div className='field__label'>Issue Date</div>
             <div
-                className='field__input'
-                style={{
-                    border: dropdown ? '1px solid #9277FF' : '1px solid #DFE3FA'
-                }}
+                className={`field__input field__input--${theme}`}
                 onClick={(e) => handleDropdown(e)}
                 ref={fieldRef}
             >

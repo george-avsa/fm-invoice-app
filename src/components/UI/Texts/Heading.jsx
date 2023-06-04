@@ -1,11 +1,26 @@
 import React from "react";
 import "./text.css";
+import { useSelector } from "react-redux";
 
-const theme = "dark";
+const colors = {
+    dark: {
+        grey: 'grey',
+        purple: 'purple',
+        black: 'dark',
+    },
+    light: {
+        grey: 'grey',
+        purple: 'purple',
+        black: 'light',
+    }
+}
 
-function Heading({ additionClass, ...props }) {
+
+function Heading({ additionClass='', grey=false, purple=false, ...props }) {
+    const theme = useSelector(state => state.settings.theme);
+
     return (
-        <p className={"heading " + additionClass + ` heading--${theme}-theme` } {...props}>
+        <p className={`heading  body-text--${colors[theme][purple ? 'purple' : grey ? 'grey' : 'black']} ` + additionClass} {...props}>
             {props.children}
         </p>
     );
@@ -19,7 +34,7 @@ function HeadingM(props) {
     return <Heading additionClass='heading-m' {...props}>{props.children}</Heading>;
 }
 
-function HeadingS({additionClass, ...props}) {
+function HeadingS({additionClass='', ...props}) {
     return <Heading additionClass={'heading-s '+ additionClass} {...props}>{props.children}</Heading>;
 }
 

@@ -19,10 +19,17 @@ form.invoice-creator {
 
     position: relative;
 
-    background: #FFFFFF;
     border-radius: 0px 20px 20px 0px;
     overflow-x: scroll;
+    
+}
 
+.invoice-creator--dark {
+    background: #141625;
+}
+
+.invoice-creator--light {
+    background: #FFFFFF;
 }
 
 .invoice-creator__inner {
@@ -73,21 +80,28 @@ form.invoice-creator {
 
 .creation-form__buttons {
     position: sticky;
-    background: #FFFFFF;
     width: 100%;
     bottom: 0;
     left: 0;
     gap: 8px;
     display: flex;
-
+    
     border-radius: 0px 20px 0px 0px;
     box-sizing: border-box;
     padding: 31px 56px 31px 156px;
     margin-top: 40px;
-
+    
     -webkit-box-shadow: 1px -4px 99px 38px rgba(34, 60, 80, 0.1);
     -moz-box-shadow: 1px -4px 99px 38px rgba(34, 60, 80, 0.1);
     box-shadow: 1px -4px 99px 38px rgba(34, 60, 80, 0.1);
+}
+
+.creation-form__buttons--light {
+    background: #FFFFFF;
+}
+
+.creation-form__buttons--dark {
+    background: #141625;
 }
 
 .creation-form__buttons {

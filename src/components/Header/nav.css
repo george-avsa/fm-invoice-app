@@ -11,10 +11,21 @@ nav {
     top: 0;
     left: 0;
 
-    background: #373B53;
     border-radius: 0px 20px 20px 0px;
-
+    
     z-index: 150;
+}
+
+.nav--light {
+    background: #373B53;
+}
+
+.nav--dark {
+    background: #1E2139;
+}
+
+.nav__grow {
+    flex-grow: 1;
 }
 
 .nav__logo {
@@ -22,6 +33,36 @@ nav {
     justify-self: flex-start;
 }
 
-.nav__dark-light-logo {
+.nav__dark-light-icon {
     width: 20px;
+}
+
+.nav__avatar {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    overflow: hidden;    
+    margin-bottom: 24px;
+}
+
+.nav__avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+nav hr {
+    color: #494E6E;
+    width: 100%;
+    height: 2px;
+    border: 1px solid #494E6E;
+    margin: 24px 0;
+}
+
+.nav__light-theme {
+    width: 10px;
+    height: 10px;
+    background: #858BB2;
+    border-radius: 50%;
+    margin-bottom: 4px;
 }

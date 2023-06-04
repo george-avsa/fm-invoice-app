@@ -21,9 +21,21 @@
     letter-spacing: -0.25px;
 }
 
-.heading--dark-theme {
-    color: #0C0E16;
+[class*='heading-'][class*='--dark'] {
+    color: #fff;
 }
+
+[class*='heading-'][class*='--light'] {
+    color: #000000;
+}
+
+[class*='heading-'][class*='--grey'] {
+    color: #888EB0;
+} 
+
+[class*='heading-'][class*='--purple'] {
+    color: #7C5DFA;
+} 
 
 .body-text {
     font-style: normal;
@@ -32,6 +44,18 @@
     line-height: 18px;
     letter-spacing: -0.1px;
 }
+
+.body-text--dark {
+    color: #fff;
+}
+
+.body-text--light {
+    color: #000000;
+}
+
+.body-text--grey {
+    color: #888EB0;
+} 
 
 .body-text--spaced {
     line-height: 15px;

@@ -7,16 +7,18 @@ import './form.scss';
 import { Select } from './../UI/Select/Select';
 import { ButtonLong } from './../UI/Buttons/ButtonLong';
 import { FormButtons } from './FormButtons';
+import { useSelector } from 'react-redux';
 
 function FormModal({editing}) {
+    const theme = useSelector(state => state.settings.theme);
     return (
         <div className='modal-wrapper'>
 
-            <form className='invoice-creator'>
+            <form className={`invoice-creator invoice-creator--${theme}`}>
                 <div className='invoice-creator__inner'>
 
                     <HeadingM style={{paddingBottom: '46px'}}>{editing ? 'Editing' : 'New invoice'}</HeadingM>
-                    <HeadingS style={{color: '#7C5DFA', marginBottom: '24px'}}>Bill From</HeadingS>
+                    <HeadingS style={{marginBottom: '24px'}} purple>Bill From</HeadingS>
                     <div className='creation-form__grid-3'>
                         <Input label="Street Address" fullW="true"></Input>
                         <Input label="City"></Input>
@@ -24,7 +26,7 @@ function FormModal({editing}) {
                         <Input label="Country"></Input>
                     </div>
 
-                    <HeadingS style={{color: '#7C5DFA', marginBottom: '24px'}}>Bill To</HeadingS>
+                    <HeadingS style={{marginBottom: '24px'}} purple>Bill To</HeadingS>
                     <div className='creation-form__grid-3'>
                         <Input label="Street Address" fullW="true"></Input>
                         <Input label="Client’s Email" fullW="true"></Input>
