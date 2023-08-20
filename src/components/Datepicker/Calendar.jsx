@@ -22,7 +22,7 @@ export function DatepickerDropdown(props) {
     }, [monthDate])
 
     return (
-        <div className={`dropdowns dropdowns--${theme}`} ref={dropdownRef}>
+        <div className={`dropdowns dropdowns--${theme}`} {...props} ref={dropdownRef}>
             <div className='calendar__controls'>
                 <img src={arrowLeft} alt='' onClick={() => dispatch(decrementMonth())} />
                 <HeadingS>{ monthToText(monthDate) }</HeadingS>

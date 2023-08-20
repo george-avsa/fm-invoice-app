@@ -4,16 +4,19 @@ export const settings = createSlice({
     name: 'settings',
     initialState: {
         theme: 'dark',
-        modalWrapper: false,
+        modalWrapper: {
+            modalForm: false,
+            modalAlert: false,
+        },
     },
     reducers: {
         toggleTheme: (state) => {
             state.theme = (state.theme === 'light') ? 'dark' : 'light'
         },
-        toggleModalWrapper: (state) => {
-            state.modalWrapper = !state.modalWrapper
+        toggleFormModal: (state) => {
+            state.modalWrapper.modalForm = !state.modalWrapper.modalForm;
         }
     }
 });
 
-export const { toggleTheme, toggleModalWrapper } = settings.actions;
+export const { toggleTheme, toggleFormModal } = settings.actions;

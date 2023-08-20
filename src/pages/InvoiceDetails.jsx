@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { dateToText } from '../calendarFunction/dateToText';
 import { fetchInvoices } from '../store/invoices';
+import { Link } from 'react-router-dom';
 
 export function InvoiceDetails(props) {
 
@@ -21,12 +22,14 @@ export function InvoiceDetails(props) {
 
     const theme = useSelector(state => state.settings.theme);
 
+    
+
     return (
         <div className='invoice-details'>
-           <div className='go-back'>
+           <Link to="/" className='go-back'>
                 <img src={arrow} alt="" />
                 <HeadingS>Go back</HeadingS>
-           </div>
+           </Link>
            <InvoiceManage></InvoiceManage>
            <div className={`invoice-information invoice-information--${theme}`}>
                 {invoice.length && (
