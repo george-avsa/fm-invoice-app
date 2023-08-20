@@ -6,6 +6,10 @@ const monthDate = new Date(now.getFullYear(), now.getMonth(), 1);
 const initialState = {
     monthDate,
     datePicked: new Date(),
+    dropdowns: {
+        datepicker: false,
+        select: false,
+    }
 }
 
 export const formSlice = createSlice({
@@ -23,10 +27,21 @@ export const formSlice = createSlice({
             return {...state, monthDate: new Date(monthDate.setMonth(monthToSet))};
         },
         pickDate: (state, action) => {
-            console.log(action.payload)
             state.datePicked = action.payload;
+        },
+        closeDatepicker: (state) => {
+            state.dropdowns.datepicker = false; 
+        },
+        openDatepicker: (state) => {
+            state.dropdowns.datepicker = true; 
+        },
+        closeSelect: (state) => {
+            state.dropdowns.select = false; 
+        },
+        openSelect: (state) => {
+            state.dropdowns.select = true; 
         }
     },
 });
 
-export const { decrementMonth, inrementMonth, pickDate} = formSlice.actions;
+export const { decrementMonth, inrementMonth, pickDate, closeDatepicker, openDatepicker, openSelect, closeSelect} = formSlice.actions;

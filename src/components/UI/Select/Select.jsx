@@ -1,15 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../Input/input.css";
 import SelectDropdown from "./SelectDropdown";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { closeSelect, openSelect } from "../../../store/form";
 
 function Select({ label, ...props }) {
     // use redux for 
-    const options = ["Lorem", "Ipsum", "Ipsum"];
+    const options = ["Lorem", "Ipsum", "Ipsum", "Ipsum", "Ipsum"];
     const [fieldValue, setFieldValue] = useState(options[0]);
     // end
 
-    const [dropdown, setDropdown] = useState(false);
+    const dropdown = useSelector(state => state.form.dropdowns.select);
+    const dispatch = useDispatch();
+
     const fieldRef = useRef(null);
 
     useEffect(() => {
@@ -18,20 +21,20 @@ function Select({ label, ...props }) {
                 e.target.contains(fieldRef.current) &&
                 e.target !== fieldRef.current
             ) {
-                setDropdown(false);
+                dispatch(closeSelect());
             }
         };
     }, []);
 
     function handleDropdown(e) {
-        setDropdown(true);
+        dispatch(openSelect());
     }
-
+    
     function selectValue(e) {
         const value = e.target.innerText;
         if (!!value) {
             setFieldValue(value);
-            setDropdown(false);
+            dispatch(closeSelect());
         }
     }
 

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Nav } from './components/Header/Nav';
+import { Invoice } from './pages/Invoice';
 import { InvoiceDetails } from './pages/InvoiceDetails';
 import './components/UI/Texts/text.css'
 import { useSelector } from 'react-redux';
-import FormModal from './components/Form/FormModal';
+import { Route, Routes } from 'react-router-dom';
 
 export default function App() {
 
@@ -14,9 +15,10 @@ export default function App() {
   return (
     <div className={`wrapper wrapper--${theme}`}>
       <Nav></Nav>
-      <FormModal></FormModal>
-      <InvoiceDetails></InvoiceDetails>
-      {modalWrapper && <style type="text/css">{"html {overflow: hidden}"}</style>}
+      <Routes>
+        <Route path="/" element={<Invoice/>} />
+        <Route path="/details/:id" element={<InvoiceDetails/>} />
+      </Routes>
     </div>
   )
 }

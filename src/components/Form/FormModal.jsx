@@ -7,12 +7,23 @@ import './form.scss';
 import { Select } from './../UI/Select/Select';
 import { ButtonLong } from './../UI/Buttons/ButtonLong';
 import { FormButtons } from './FormButtons';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useRef } from 'react';
+import { toggleFormModal } from '../../store/settings';
 
 function FormModal({editing}) {
     const theme = useSelector(state => state.settings.theme);
+
+    const dispatch = useDispatch();
+
+    function closeFormModal(e) {
+        if (e.target.getAttribute('class') === 'modal-wrapper') {
+            dispatch(toggleFormModal());
+        }
+    }
+
     return (
-        <div className='modal-wrapper'>
+        <div className='modal-wrapper' onClick={e => closeFormModal(e)}>
 
             <form className={`invoice-creator invoice-creator--${theme}`}>
                 <div className='invoice-creator__inner'>

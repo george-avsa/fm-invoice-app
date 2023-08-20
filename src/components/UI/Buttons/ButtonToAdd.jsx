@@ -4,7 +4,7 @@ import { Button } from "./Button";
 
 function ButtonToAdd(props) {
     return (
-        <Button color='purple' additionalClass='button--creaction'>
+        <Button color='purple' additionalClass='button--creaction' {...props}>
             <img src={plus} alt='plus' className='button__plus' />
             {props.children}
         </Button>
