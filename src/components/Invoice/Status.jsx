@@ -1,6 +1,6 @@
 import { HeadingS } from "../UI/Texts/Heading";
 
-export function InvoiceStatus({status}) {
+export function Status({status}) {
 
     return (
         <div className={`invoice-status invoice-status--${status}`}>

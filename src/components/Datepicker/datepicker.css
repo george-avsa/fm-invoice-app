@@ -9,6 +9,8 @@
     border-radius: 8px;
     transition: .5s;
     z-index: 200;
+
+    background-color: red;
 }
 
 .dropdowns--light {
@@ -27,6 +29,7 @@
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(5, 1fr);
 }
+
 
 .calendar__item {
     display: flex;

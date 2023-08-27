@@ -14,4 +14,9 @@
 
 .dropdown {
     z-index: 1000;
+    width: auto;
+}
+
+.filter__dropdown {
+    width: auto !important;
 }

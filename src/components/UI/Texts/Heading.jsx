@@ -7,20 +7,22 @@ const colors = {
         grey: 'grey',
         purple: 'purple',
         black: 'dark',
+        opposite: 'white',
     },
     light: {
         grey: 'grey',
         purple: 'purple',
         black: 'light',
+        opposite: 'white'
     }
 }
 
 
-function Heading({ additionClass='', grey=false, purple=false, ...props }) {
+function Heading({ additionClass='', color='black', grey=false, purple=false, ...props }) {
     const theme = useSelector(state => state.settings.theme);
 
     return (
-        <p className={`heading  body-text--${colors[theme][purple ? 'purple' : grey ? 'grey' : 'black']} ` + additionClass} {...props}>
+        <p className={`heading  body-text--${colors[theme][color]} ` + additionClass} {...props}>
             {props.children}
         </p>
     );
