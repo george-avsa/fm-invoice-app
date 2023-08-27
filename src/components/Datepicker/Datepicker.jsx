@@ -14,15 +14,15 @@ function Datepicker({ label, ...props }) {
     const fieldRef = useRef(null);
 
     useEffect(() => {
-        window.onclick = (e) => {
-            if (
-                e.target.contains(fieldRef.current) &&
-                e.target !== fieldRef.current
-            ) {
-                setDropdown(false);
-            }
-        };
-    }, []);
+        window.addEventListener('click', (e) => {
+                if (
+                    e.target.contains(fieldRef.current) &&
+                    e.target !== fieldRef.current
+                ) {
+                    setDropdown(false);
+                }
+            })
+        }, []);
     
     function handleDropdown(e) {
         setDropdown(true);

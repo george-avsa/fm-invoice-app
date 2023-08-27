@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-import { InvoiceItem } from "./InvoiceItem";
-import { InvoiceEmpty } from "./InvoiceEmpty";
+import { Item } from "./Item";
+import { Empty } from "./Empty";
 import { useEffect } from "react";
 import { fetchInvoices } from "../../store/invoices";
 
 
-export function InvoiceList() {
+export function List() {
     const invoiceList = useSelector(store => store.invoiceList)
 
     const dispatch = useDispatch();
@@ -17,8 +17,8 @@ export function InvoiceList() {
     return (
         <div className="invoice-list__content">
             {invoiceList.length ? invoiceList.map(a => (
-                <InvoiceItem {...a}></InvoiceItem>
-            )) : <InvoiceEmpty></InvoiceEmpty>}
+                <Item {...a}></Item>
+            )) : <Empty></Empty>}
         </div>
     );
 } 

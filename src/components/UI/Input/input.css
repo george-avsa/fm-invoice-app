@@ -78,10 +78,11 @@
 }
 
 .dropdown {
-    align-self: flex-start;
     position: absolute;
+    align-self: flex-start;
     width: 100%;
-    bottom: -150px;
+    height: auto;
+    top: calc(100% + 10px);
 
     border-radius: 8px;
     transition: .5s;

@@ -3,8 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const fetchInvoices = createAsyncThunk(
     'invoiceList/fetchInvoices',
     async () => {
-        const res = await fetch('http://localhost:3001/api/invoices')
-        console.log(res)
+        const res = await fetch('http://localhost:3001/api/invoices');
         const data = await res.json();
         return data;
     }
@@ -19,6 +18,7 @@ export const invoiceListSlice = createSlice({
     extraReducers: (builder) => {
         builder
         .addCase(fetchInvoices.fulfilled, (state, action) => {
+            // console.log(action.payload)
           return action.payload;
         })
         .addCase(fetchInvoices.pending, (state, action) => {

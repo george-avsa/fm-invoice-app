@@ -2,7 +2,7 @@ import { BodyText } from "../UI/Texts/BodyText";
 import { HeadingL } from "../UI/Texts/Heading";
 import invoiceEmpty from "./../../images/invoiceEmpty.svg";
 
-export function InvoiceEmpty() {
+export function Empty() {
     return (
         <div className="invoice-list__empty">
             <img src={invoiceEmpty} alt="" />

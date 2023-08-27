@@ -7,14 +7,12 @@ import SelectDropdown from '../Select/SelectDropdown';
 
 export function Filter() {
 
-    const options = ["Lorem", "Ipsum",];
+    const options = ["Lorem", "Ipsum", "dkokfdlklreferer"];
     const [dropdown, setDropdown] = useState(false);
-    const [fieldValue, setFieldValue] = useState(options[0]);
 
     function selectValue(e) {
         const value = e.target.innerText;
         if (!!value) {
-            setFieldValue(value);
             setDropdown(false);
         }
     }
@@ -29,6 +27,7 @@ export function Filter() {
                 clearTimeout(timerId);
             }
             setDropdown(true)
+            
         });
         
         filterRef.current.addEventListener('mouseout', () => {
@@ -43,7 +42,7 @@ export function Filter() {
             <HeadingS>Filter by status</HeadingS>
             <img className='filter__arrow' src={arrowLeft} alt="" />
             {dropdown && (
-                <SelectDropdown options={options} selectValue={selectValue}></SelectDropdown>
+                <SelectDropdown options={options} selectValue={selectValue} ></SelectDropdown>
             )}
         </div>
     );
