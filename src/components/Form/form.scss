@@ -61,15 +61,29 @@ form.invoice-creator {
 }
 
 .creation-form__items {
+    max-width: 508px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    gap: 16px;
+    column-gap: 16px;
+}
+
+.creation-form__items:not(:last-child) {
+    margin-bottom: 16px;
 }
 
 .create-form__cell-center {
     display: flex;
     align-items: center;
+    grid-column: 8/10;
+    justify-content: space-between;
+}
+
+.create-form__cell-center p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 76.5px;
 }
 
 .create-form__delete {
@@ -85,6 +99,8 @@ form.invoice-creator {
     left: 0;
     gap: 8px;
     display: flex;
+
+    z-index: 201;
     
     border-radius: 0px 20px 0px 0px;
     box-sizing: border-box;
@@ -106,4 +122,16 @@ form.invoice-creator {
 
 .creation-form__buttons {
     justify-content: flex-end;
+}
+
+.form-list__item-name {
+    grid-column: 1/5;
+}
+
+.form-list__quantity {
+    grid-column: 6/8;
+}
+
+.form-list__total {
+    grid-column: 8/10;
 }

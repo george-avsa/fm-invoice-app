@@ -10,24 +10,13 @@ const tableTitle = [{
     total:'Total',
 }];
 
-function OrderList() {
-    const [items, setItems] = useState([{
-        name: 'Keklol',
-        quantity: '2',
-        price: '10.000',
-        total: '20.000',
-    }, {
-        name: 'Keklol',
-        quantity: '2',
-        price: '10.000',
-        total: '20.000',
-    }]);
+function OrderList({invoice}) {
 
     const theme = useSelector(state => state.settings.theme);
 
     return (
         <div className={`order__list order__list--${theme}`}>
-            {tableTitle.concat(items).map(item => (
+            {tableTitle.concat(invoice.items).map(item => (
                 <>
                     <div className="list__name">
                         { item.total === 'Total' 

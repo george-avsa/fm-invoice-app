@@ -1,14 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./datepicker.css";
 import "./../UI/Input/input.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { DatepickerDropdown } from "./Calendar";
 import { dateToText } from "../../calendarFunction/dateToText";
 import calendarIcon from "./../../images/calenfarIcon.svg"
+import Label from "../UI/Input/Label";
+import { closeDatepicker, openDatepicker } from "../../store/form";
 
 function Datepicker({ label, ...props }) {
 
     const datePicked = useSelector(state => state.form.datePicked);
+
+    const dispatch = useDispatch();
+
+    const dropdownVisible = useSelector(state => state.form.dropdowns.datepicker);
 
     const [dropdown, setDropdown] = useState(false);
     const fieldRef = useRef(null);
@@ -19,13 +25,13 @@ function Datepicker({ label, ...props }) {
                     e.target.contains(fieldRef.current) &&
                     e.target !== fieldRef.current
                 ) {
-                    setDropdown(false);
+                    dispatch(closeDatepicker());
                 }
             })
-        }, []);
+        }, [fieldRef]);
     
     function handleDropdown(e) {
-        setDropdown(true);
+        dispatch(openDatepicker())
     }
 
     const inputClassList = [
@@ -38,8 +44,8 @@ function Datepicker({ label, ...props }) {
 
     return (
         <div className='field' {...props}>
-            {dropdown && <DatepickerDropdown></DatepickerDropdown>}
-            <div className='field__label'>Issue Date</div>
+            {dropdownVisible && <DatepickerDropdown></DatepickerDropdown>}
+            <Label grey>Issue Date</Label>
             <div
                 className={`field__input field__input--${theme}`}
                 onClick={(e) => handleDropdown(e)}

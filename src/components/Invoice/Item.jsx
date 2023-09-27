@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 export function Item({
     id,
     createdAt,
-    clientName,
+    billTo,
     total,
     status,
 }) {
@@ -28,7 +28,7 @@ export function Item({
                 <HeadingS>#{id}</HeadingS>
                 <BodyText grey>Due {dateToText(new Date(createdAt), 'text')}</BodyText>
             </div>
-            <BodyText style={{flexGrow: "1"}} grey>{clientName}</BodyText>
+            <BodyText style={{flexGrow: "1"}} grey>{billTo.fullname}</BodyText>
             <HeadingS style={{flexGrow: "1", textAlign: "right"}}>£ {Number(total).toFixed(2)}</HeadingS>
             <Status status={status}></Status>
                 <img src={arrowLeft} />

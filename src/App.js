@@ -7,6 +7,8 @@ import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import ModalPrompt from './components/Modal/ModalPrompt';
 import Modal from './components/Modal/ModalPrompt';
+import Message from './components/UI/Message/Message';
+import Success from './components/UI/Message/Success';
 
 export default function App() {
 

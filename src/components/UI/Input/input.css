@@ -13,12 +13,16 @@
     font-weight: 500;
     font-size: 13px;
     line-height: 15px;
-    margin-bottom: 8px;
-
+    margin-bottom: 0px;
+    
     color: #7E88C3;
     
     letter-spacing: -0.1px;
     
+}
+
+.field__label--margin {
+    margin-bottom: 8px;
 }
 
 .field__label--light {
@@ -43,12 +47,16 @@
     line-height: 15px;
     letter-spacing: -0.25px;
     
-    
     outline: 0px solid black;
     
     padding: 12px 20px;
     
     transition: all 2ms;
+}
+
+.field__input--padding {
+    padding: 12px 0px;
+    text-align: center;
 }
 
 .field__input--light {

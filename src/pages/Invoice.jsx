@@ -6,8 +6,9 @@ import { ButtonToAdd } from '../components/UI/Buttons/ButtonToAdd';
 import { List } from '../components/Invoice/List';
 import { Filter } from '../components/UI/Filter/Filter';
 import FormModal from '../components/Form/FormModal';
-import { toggleFormModal } from '../store/settings';
+import { stopRedirect, toggleFormModal } from '../store/settings';
 import Modal from '../components/Modal/ModalPrompt';
+import { useEffect } from 'react';
 
 export function Invoice(props) {
     const invoiceAmount = useSelector(state => state.invoiceList.length);
@@ -19,7 +20,13 @@ export function Invoice(props) {
         dispatch(toggleFormModal());
     }
 
+    useEffect(() => {
+        dispatch(stopRedirect());
+    }, []);
+
     return (
+
+
         <>
         <div className='invoice-list'>
             <div className="invoice-list__header">
@@ -33,7 +40,7 @@ export function Invoice(props) {
             <List></List>
             {modalForm && <FormModal></FormModal>}
         </div>
-        <Modal></Modal>
+        {/* <Modal></Modal> */}
         </>
     );
 }

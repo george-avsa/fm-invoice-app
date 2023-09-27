@@ -1,8 +1,11 @@
 import { useSelector } from "react-redux";
 import { BodyText } from "../UI/Texts/BodyText";
 import { HeadingM } from "../UI/Texts/Heading";
+import { useParams } from "react-router-dom";
 
-function OrderTotal() {
+function OrderTotal({
+    total
+}) {
 
     const theme = useSelector(state => state.settings.theme);
 

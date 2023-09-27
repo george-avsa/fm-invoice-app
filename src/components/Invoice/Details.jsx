@@ -2,19 +2,21 @@ import { useSelector } from "react-redux";
 import { BodyText } from "../UI/Texts/BodyText";
 import { HeadingS } from "../UI/Texts/Heading";
 import './details.css';
-import DetailsInformation from "./DetailsInformation";
+import DetailedInformation from "./DetailedInformation";
 import OrderList from "./OrderList";
 import OrderTotal from "./OrderTotal";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
-function Details() {
+function Details({invoice}) {
 
     const theme = useSelector(state => state.settings.theme);
-
+    
     return (
         <div className={`details details--${theme}`}>
-            <DetailsInformation></DetailsInformation>
+            <DetailedInformation invoice={invoice}></DetailedInformation>
             <div className="order">
-                <OrderList></OrderList>
+                <OrderList invoice={invoice}></OrderList>
                 <OrderTotal></OrderTotal>  
             </div>
         </div>

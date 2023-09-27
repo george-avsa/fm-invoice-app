@@ -1,0 +1,15 @@
+.message {
+    position: fixed;
+    z-index: 101;
+    padding: 16px 24px;
+
+    left: 50%;
+    bottom: 50px;
+
+    border-radius: 24px;
+}
+
+.message--success {
+    margin-left: -113px;
+    cursor: default;
+}

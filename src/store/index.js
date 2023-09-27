@@ -10,6 +10,7 @@ const rootReducer = combineReducers({
     settings: settings.reducer,
 });
 
+
 export const store = configureStore({
     reducer: rootReducer,
     devTools:true,
