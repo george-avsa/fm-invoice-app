@@ -18,7 +18,7 @@ function BodyText({ additionalClass = "", grey=false, style, ...props }) {
     const theme = useSelector(state => state.settings.theme);
 
     return <p 
-        className={`body-text body-text--${colors[theme][grey ? 'grey' : 'black']}` + additionalClass} 
+        className={`body-text body-text--${colors[theme][grey ? 'grey' : 'black']} ` + additionalClass} 
         style={{...style}}
         {...props}
     >

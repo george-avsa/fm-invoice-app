@@ -14,6 +14,10 @@ export function List() {
         dispatch(fetchInvoices()) 
     }, [])
 
+    useEffect(() => {
+        console.log(invoiceList);
+    }, [invoiceList])
+
     return (
         <div className="invoice-list__content">
             {invoiceList.length ? invoiceList.map(a => (

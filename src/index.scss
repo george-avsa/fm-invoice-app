@@ -31,3 +31,13 @@ html, body {
 .wrapper--dark {
   background: #141625;
 }
+
+.invoice-creator::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+.invoice-creator {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

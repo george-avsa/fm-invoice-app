@@ -7,13 +7,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { dateToText } from '../calendarFunction/dateToText';
 import { fetchInvoices } from '../store/invoices';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import { Manager } from '../components/Invoice/Manager';
 import Details from '../components/Invoice/Details';
+import FormModal from '../components/Form/FormModal';
+import ModalPrompt from './../components/Modal/ModalPrompt'
+import Success from '../components/UI/Message/Success';
+import { hideSuccessEdit } from '../store/settings';
 
 export function InvoiceDetails(props) {
-
-    const invoice = useSelector(store => store.invoiceList)
 
     const dispatch = useDispatch();
 
@@ -21,18 +23,36 @@ export function InvoiceDetails(props) {
         dispatch(fetchInvoices()) 
     }, [])
 
-    const theme = useSelector(state => state.settings.theme);
+    const {id} = useParams();
+    const invoice = useSelector(state => state.invoiceList.find(invoice => invoice.id === id)); 
 
-    
+    const modalPrompt = useSelector(state => state.settings.modalWrapper.modalPrompt); 
+
+    const modalForm = useSelector(state => state.settings.modalWrapper.modalForm);
+    const settedRedirect = useSelector(state => state.settings.redirect);
+
+    const successEdit = useSelector(state => state.settings.successEdit);
+
+    useEffect(() => {
+        setTimeout(() => dispatch(hideSuccessEdit()), 3000)
+    }, [successEdit]);
 
     return (
         <div className='invoice-details'>
+            {settedRedirect && <Navigate to="/" />}
            <Link to="/" className='go-back'>
                 <img src={arrow} alt="" />
                 <HeadingS>Go back</HeadingS>
            </Link>
-           <Manager></Manager>
-           <Details></Details>
+           {invoice && (
+            <>
+               <Manager status={invoice.status}></Manager>
+               <Details invoice={invoice}></Details>
+            </>
+           )}
+            {modalForm && <FormModal editing></FormModal>}
+            {modalPrompt && <ModalPrompt></ModalPrompt>}
+            {successEdit && <Success></Success>}
         </div>
     );
 }

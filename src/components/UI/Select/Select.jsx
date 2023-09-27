@@ -3,6 +3,7 @@ import "../Input/input.css";
 import SelectDropdown from "./SelectDropdown";
 import { useDispatch, useSelector } from "react-redux";
 import { closeSelect, openSelect } from "../../../store/form";
+import Label from "../Input/Label";
 
 function Select({ label, ...props }) {
     // use redux for 
@@ -45,7 +46,7 @@ function Select({ label, ...props }) {
             {dropdown && (
                 <SelectDropdown options={options} selectValue={selectValue}></SelectDropdown>
             )}
-            <div className='field__label' style={{color: '#7E88C3'}}>{label}</div>
+            <Label grey>Payment Terms</Label>
             <div
                 className={`field__input field__input--${theme}`}
                 onClick={(e) => handleDropdown(e)}
